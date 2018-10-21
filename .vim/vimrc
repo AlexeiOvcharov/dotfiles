@@ -1,0 +1,59 @@
+set nocompatible
+filetype off
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Color scheme
+Plugin 'vim-scripts/wombat256.vim'
+
+" Spippets
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+
+" Autocompletieon
+Plugin 'Shougo/neocomplcache.vim'
+
+call vundle#end()
+filetype plugin indent on
+
+" Configuration
+let g:airline_theme = 'powerlineish'
+let g:airline#extensions#tabline#enabled = 1
+
+let g:acp_enableAtStartup = 0
+let g:neocomplcache_enable_auto_select = 1
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+
+let g:haskellmode_completion_ghc = 0
+let g:necoghc_enable_detailed_browse = 1
+
+colorscheme wombat256mod
+
+" tabulation
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set smarttab
+
+set number
+
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+
+" Test
